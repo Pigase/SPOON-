@@ -27,9 +27,18 @@ public class SpoonControler : MonoBehaviour
         {
             Click();
             Barier();
+            CheckForFlip();
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Ingredient ingredient = other.GetComponent<Ingredient>();
+        if (ingredient == null)
+            return;
+
+        other.gameObject.SetActive(false); // Отключаем ингредиент
+    }
     private void Barier()
     {
         if (transform.position.x > _X + 2)
@@ -55,5 +64,16 @@ public class SpoonControler : MonoBehaviour
             _tempMove = touchPos1;
         }
 
+    }
+    private void CheckForFlip()
+    {
+        if(transform.position.x < 0)
+        {
+            gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        if (transform.position.x > 2)
+        {
+            gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
     }
 }

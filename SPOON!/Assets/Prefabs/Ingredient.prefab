@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.69, y: 8.91, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.33532, y: 0.33532, z: 0.33532}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,9 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _valueGoodIngredient: 5
-  _valueBadIngredient: 10
-  _valueDeadlyIngredient: 100
+  _goodIngredientChance: 45
+  _badIngredientChance: 45
   _spritesGoodIngredient:
   - {fileID: 21300000, guid: c88b77e63ae9dd84bbc5054bc43b75c3, type: 3}
   _spritesBadIngredient:
