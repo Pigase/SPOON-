@@ -5,41 +5,55 @@ using UnityEngine.EventSystems;
 
 public class SpoonControler : MonoBehaviour
 {
-    [SerializeField] private BoxCollider2D _boundaryCollider;
-    private Vector2 _minBounds;
-    private Vector2 _maxBounds;
-    private Camera _mainCamera;
+    [SerializeField] private GameObject _rightObgect;
+    [SerializeField] private GameObject _upObgect;
+    [SerializeField] private float _Y;
+    [SerializeField] private float _X;
 
-    private void Awake()
+    private Vector2 _tempMove;
+    private Vector2 pos;
+    private bool playerLive = true;
+
+    private void Start()
     {
-        _mainCamera = Camera.main;
-        CalculateBounds();
+        _Y = _upObgect.transform.position.y;
+        _X = _rightObgect.transform.position.x;
     }
-
-    private void CalculateBounds()
-    {
-        // ѕолучаем мировые координаты границ
-        Bounds bounds = _boundaryCollider.bounds;
-        _minBounds = bounds.min;
-        _maxBounds = bounds.max;
-
-        // ƒл€ дебага (можно удалить)
-        Debug.Log($"Bounds: {_minBounds} to {_maxBounds}");
-    }
-
     private void Update()
     {
-        //if (EventSystem.current.IsPointerOverGameObject()) return;
-
-        Vector2 mousePos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        MoveSpoon(mousePos);
+        if (Time.deltaTime <= 0f)
+            return;
+        if (playerLive)
+        {
+            Click();
+            Barier();
+        }
     }
 
-    private void MoveSpoon(Vector2 targetPosition)
+    private void Barier()
     {
-        float clampedX = Mathf.Clamp(targetPosition.x, _minBounds.x, _maxBounds.x);
-        float clampedY = Mathf.Clamp(targetPosition.y, _minBounds.y, _maxBounds.y);
+        if (transform.position.x > _X + 2)
+            transform.position = new Vector2(_X + 2, transform.position.y);//смещаем в право так как будет слева шкала
+        if (transform.position.x < -_X)
+            transform.position = new Vector2(-_X, transform.position.y);
+        if (transform.position.y > _Y - 5)
+            transform.position = new Vector2(transform.position.x, _Y - 5);
+        if (transform.position.y < -_Y)
+            transform.position = new Vector2(transform.position.x, -_Y);
 
-        transform.position = new Vector2(clampedX, clampedY);
+    }
+    private void Click()
+    {
+        if (Input.GetMouseButtonDown(0))
+            _tempMove = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetMouseButton(0))
+        {
+            Vector2 touchPos1 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            pos.y = transform.position.y - (_tempMove.y - touchPos1.y);
+            pos.x = transform.position.x - (_tempMove.x - touchPos1.x);
+            transform.position = pos;
+            _tempMove = touchPos1;
+        }
+
     }
 }

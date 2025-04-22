@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ingredient
+  - GoodIngredient
+  - BadIngredient
+  - DeadlyIngredient
   layers:
   - Default
   - TransparentFX

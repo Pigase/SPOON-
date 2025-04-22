@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7137255, g: 0.24313727, b: 0.121568635, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,6 +100,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
+  _valueGoodIngredient: 5
+  _valueBadIngredient: 10
+  _valueDeadlyIngredient: 100
+  _spritesGoodIngredient:
+  - {fileID: 21300000, guid: c88b77e63ae9dd84bbc5054bc43b75c3, type: 3}
+  _spritesBadIngredient:
+  - {fileID: 21300000, guid: dfbc308b3f64ef845a4280f55227224c, type: 3}
+  _spritesDeadlyIngredient:
+  - {fileID: 21300000, guid: 5e74665b0e468b7469d62ffb9259a390, type: 3}
+  - {fileID: 21300000, guid: dbcb1d232b907b34b9a5a3dd572adac1, type: 3}
 --- !u!61 &-4265330657166435890
 BoxCollider2D:
   m_ObjectHideFlags: 0
