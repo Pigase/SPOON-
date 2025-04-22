@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyerIngredient : MonoBehaviour
+public class Soup : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {

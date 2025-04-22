@@ -6,22 +6,17 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Ingredient : MonoBehaviour
 {
-    [SerializeField] private float _speed = 1;
+    [SerializeField] private float _speed = 1f;
+    private Rigidbody2D _rb;
 
-    private Vector2 _target;
-
-    
-    private void OnEnable()
+    private void Awake()
     {
-        _target = new Vector2(transform.position.x, transform.position.y-30);
-    }
-    private void Update()
-    {
-        Move();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Move()
+    private void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
+        // «адаем скорость через физику (более стабильно)
+        _rb.velocity = Vector2.down * _speed;
     }
 }
