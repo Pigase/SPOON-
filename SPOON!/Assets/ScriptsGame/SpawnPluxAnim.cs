@@ -7,7 +7,6 @@ public class SpawnPluxAnim : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject[] _animPosition;
-    [SerializeField] private Soup _soupGameobject;
 
     private void PlayAnim()
     {
@@ -16,16 +15,20 @@ public class SpawnPluxAnim : MonoBehaviour
             var play = _animPosition[UnityEngine.Random.Range(0, _animPosition.Length)]?.GetComponent<Animator>();
 
             play.SetTrigger("Plux");
+
+            Debug.Log("Down");
         }
             
-        throw new Exception($"You did not specify the animation spawn point (senior)");
+        //throw new Exception($"You did not specify the animation spawn point (senior)");
     }
 
     private void OnEnable()
     {
+        Soup.IOnIngredientAdded += PlayAnim;
     }
 
     private void OnDisable()
     {
+        Soup.IOnIngredientAdded -= PlayAnim;
     }
 }

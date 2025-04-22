@@ -22,6 +22,7 @@ public class Soup : MonoBehaviour
     [Header("Events")]
     public IngredientEvent OnIngredientAdded;
     public static Action OnSoupRuined;
+    public static Action IOnIngredientAdded;
 
     private float _currentQuality;
 
@@ -61,6 +62,7 @@ public class Soup : MonoBehaviour
 
         // Âûחûגאול סמבûעטו
         OnIngredientAdded?.Invoke(ingredient.GetIngredientType());
+        IOnIngredientAdded?.Invoke();
     }
 
     private void AddQuality(float amount)

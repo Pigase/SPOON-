@@ -898,6 +898,7 @@ GameObject:
   - component: {fileID: 525904013}
   - component: {fileID: 525904014}
   - component: {fileID: 525904015}
+  - component: {fileID: 525904016}
   m_Layer: 0
   m_Name: GameManipulator
   m_TagString: Untagged
@@ -959,6 +960,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scene: 1
+--- !u!114 &525904016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525904011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a21ce61e0fd5a4b9b80fd0c43ccaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animPosition:
+  - {fileID: 512861227}
+  - {fileID: 975167411}
+  - {fileID: 1926681075}
+  - {fileID: 1384032978}
+  - {fileID: 229466391}
+  - {fileID: 651020683}
+  - {fileID: 637583639}
+  - {fileID: 272230054}
 --- !u!1 &628083217
 GameObject:
   m_ObjectHideFlags: 0
