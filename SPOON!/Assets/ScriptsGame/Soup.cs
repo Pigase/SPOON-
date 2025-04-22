@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System;
 
 public class Soup : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Soup : MonoBehaviour
 
     [Header("Events")]
     public IngredientEvent OnIngredientAdded;
-    public UnityEvent OnSoupRuined;
+    public static Action OnSoupRuined;
 
     private float _currentQuality;
 

@@ -9,6 +9,7 @@ public class SceneTransition : MonoBehaviour
 
     public void SceneReplacement()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(_scene);
     }
 }
