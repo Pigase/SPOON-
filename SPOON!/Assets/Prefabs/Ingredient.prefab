@@ -103,12 +103,29 @@ MonoBehaviour:
   _goodIngredientChance: 45
   _badIngredientChance: 45
   _spritesGoodIngredient:
-  - {fileID: 21300000, guid: c88b77e63ae9dd84bbc5054bc43b75c3, type: 3}
+  - {fileID: 1853416158, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: 1477909405, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: 1701261195, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: 871458391, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: 2066169534, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: 1015789156, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: 352375951, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: -1151610652, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: 658416021, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: -330006959, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: 1940676129, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: -1550677775, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: 939167722, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
+  - {fileID: 939167722, guid: 3050f032d4a79014fbaf6e8c6d50b4af, type: 3}
   _spritesBadIngredient:
-  - {fileID: 21300000, guid: dfbc308b3f64ef845a4280f55227224c, type: 3}
+  - {fileID: 21300000, guid: 676b2f91211273f46abf7798cf307d4e, type: 3}
   _spritesDeadlyIngredient:
   - {fileID: 21300000, guid: 5e74665b0e468b7469d62ffb9259a390, type: 3}
   - {fileID: 21300000, guid: dbcb1d232b907b34b9a5a3dd572adac1, type: 3}
+  - {fileID: 21300000, guid: dfbc308b3f64ef845a4280f55227224c, type: 3}
+  - {fileID: 21300000, guid: c88b77e63ae9dd84bbc5054bc43b75c3, type: 3}
+  - {fileID: 21300000, guid: a482af73cfdf28e4aaf052e91570c520, type: 3}
+  - {fileID: 21300000, guid: a482af73cfdf28e4aaf052e91570c520, type: 3}
 --- !u!61 &-4265330657166435890
 BoxCollider2D:
   m_ObjectHideFlags: 0

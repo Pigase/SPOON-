@@ -13,9 +13,12 @@ public class SpoonControler : MonoBehaviour
     private Vector2 _tempMove;
     private Vector2 pos;
     private bool playerLive = true;
+    private AudioSource audioSource;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         _Y = _upObgect.transform.position.y;
         _X = _rightObgect.transform.position.x;
     }
@@ -37,6 +40,7 @@ public class SpoonControler : MonoBehaviour
         if (ingredient == null)
             return;
 
+        PlaySound();
         other.gameObject.SetActive(false); // Отключаем ингредиент
     }
     private void Barier()
@@ -75,5 +79,10 @@ public class SpoonControler : MonoBehaviour
         {
             gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
         }
+    }
+
+    private void PlaySound()
+    {
+        audioSource?.Play();
     }
 }
