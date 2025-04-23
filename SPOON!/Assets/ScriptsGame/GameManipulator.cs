@@ -11,7 +11,7 @@ public class GameManipulator : MonoBehaviour
 
     private AudioSource[] audio;
 
-    public static Action SecondWave;
+    public static Action NewWave;
     public static Action<int> NumberWave;
 
     private void Start()
@@ -41,7 +41,13 @@ public class GameManipulator : MonoBehaviour
     {
         if (_numberWave == 1)
         {
-            SecondWave?.Invoke();
+            NewWave?.Invoke();
+            _numberWave++;
+            NumberWave.Invoke(_numberWave);
+        }
+        else if (_numberWave == 2)
+        {
+            NewWave?.Invoke();
             _numberWave++;
             NumberWave.Invoke(_numberWave);
         }

@@ -715,6 +715,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolCount: 12
   _pauseTime: 5
+  _minTimeSpawn: 1
+  _maxTimeSpawn: 1.5
   _autoExpande: 1
   _prefab: {fileID: 4733446438962477122, guid: 305b0e3857617d54193bb6e21422aa5e, type: 3}
   _right: {fileID: 628083217}

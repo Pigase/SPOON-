@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class SpawnerObjects : MonoBehaviour
 {
+    [Header("Parametars")]
     [SerializeField] private int _poolCount = 12;
     [SerializeField] private float _pauseTime = 5f;
+    [SerializeField] private float _minTimeSpawn = 1f;
+    [SerializeField] private float _maxTimeSpawn = 1.5f;
     [SerializeField] private bool _autoExpande = true;
+
     [SerializeField] private Ingredient _prefab;
     [SerializeField] private GameObject _right;
 
@@ -25,12 +29,12 @@ public class SpawnerObjects : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManipulator.SecondWave += StopSpawn;
+        GameManipulator.NewWave += StopSpawn;
     }
 
     private void OnDisable()
     {
-        GameManipulator.SecondWave -= StopSpawn;
+        GameManipulator.NewWave -= StopSpawn;
     }
 
     private void StartSpawning()
@@ -56,7 +60,7 @@ public class SpawnerObjects : MonoBehaviour
                 ingredient.transform.parent = null;
             }
 
-            float randomTimeSpawn = Random.Range(1.5f, 2f);
+            float randomTimeSpawn = Random.Range(_minTimeSpawn, _maxTimeSpawn);
             yield return new WaitForSeconds(randomTimeSpawn);
         }
     }
@@ -69,6 +73,8 @@ public class SpawnerObjects : MonoBehaviour
     private IEnumerator PauseSpawning(float pauseTime)
     {
         _isSpawningPaused = true;
+        _minTimeSpawn -= 0.2f;
+        _maxTimeSpawn -= 0.2f;
         yield return new WaitForSeconds(pauseTime);
         _isSpawningPaused = false;
     }

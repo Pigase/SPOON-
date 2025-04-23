@@ -37,12 +37,12 @@ public class Ingredient : MonoBehaviour
         SetRandomRotate();
         SetRandomTypeAndSprite();
 
-        GameManipulator.SecondWave += UpStats;
+        GameManipulator.NumberWave += UpStats;
     }
 
     private void OnDisable()
     {
-        GameManipulator.SecondWave += UpStats;
+        GameManipulator.NumberWave += UpStats;
     }
     private void SetRandomTypeAndSprite()
     {
@@ -69,11 +69,20 @@ public class Ingredient : MonoBehaviour
         }
     }
 
-    private void UpStats()
+    private void UpStats(int num)
     {
-        _goodIngredientChance = 20;
-        _badIngredientChance = 40;
-        _speed = 5f;
+        if (num == 2)
+        {
+            _goodIngredientChance = 35;
+            _badIngredientChance = 40;
+            _speed = 5f;
+        }
+        if (num == 3)
+        {
+            _goodIngredientChance = 30;
+            _badIngredientChance = 35;
+            _speed = 7f;
+        }
     }
     private void SetRandomRotate()
     {
