@@ -14,15 +14,15 @@ public class Ingredient : MonoBehaviour
     [SerializeField] private float _speed = 1f;
     [SerializeField] private int _goodIngredientChance = 45;
     [SerializeField] private int _badIngredientChance = 45;
-
-    //[SerializeField] private float _valueGoodIngredient = 5;
-    //[SerializeField] private float _valueBadIngredient = -10;
-    //[SerializeField] private float _valueDeadlyIngredient = -100;
+    [SerializeField] private float _speedMinRotate = 1f;
+    [SerializeField] private float _speedMaxRotate = 2f;
 
     [Header("References")]
     [SerializeField] private Sprite[] _spritesGoodIngredient;
     [SerializeField] private Sprite[] _spritesBadIngredient;
     [SerializeField] private Sprite[] _spritesDeadlyIngredient;
+
+    [SerializeField] private float _speedRotate;
 
     private Rigidbody2D _rb;
     private SpriteRenderer _sp;
@@ -34,6 +34,7 @@ public class Ingredient : MonoBehaviour
     }
     private void OnEnable()
     {
+        SetRandomRotate();
         SetRandomTypeAndSprite();
     }
     private void SetRandomTypeAndSprite()
@@ -61,8 +62,14 @@ public class Ingredient : MonoBehaviour
         }
     }
 
+    private void SetRandomRotate()
+    {
+        _speedRotate = UnityEngine.Random.Range(_speedMinRotate, _speedMaxRotate);
+    }
+
     private void FixedUpdate()
     {
+        transform.Rotate(Vector3.forward * _speedRotate * Time.deltaTime);
         _rb.velocity = Vector2.down * _speed;
     }
 
