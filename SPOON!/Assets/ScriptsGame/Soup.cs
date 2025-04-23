@@ -15,6 +15,7 @@ public class Soup : MonoBehaviour
     [SerializeField] private float _goodValue = 5f;
     [SerializeField] private float _badValue = -10f;
     [SerializeField] private float _deadlyValue = -100f;
+    [SerializeField] private float _timeAfterWave = 5f;
 
     [Header("References")]
     [SerializeField] private Slider _qualitySlider;
@@ -22,6 +23,7 @@ public class Soup : MonoBehaviour
     [Header("Events")]
     public IngredientEvent OnIngredientAdded;
     public static Action OnSoupRuined;
+    public static Action OnSoupFull;
     public static Action IOnIngredientAdded;
 
     private float _currentQuality;
@@ -74,6 +76,13 @@ public class Soup : MonoBehaviour
         {
             OnSoupRuined?.Invoke();
         }
+        if (_currentQuality >= _maxQuality)
+        {
+            OnSoupFull?.Invoke();
+
+            StartCoroutine(DoInvulnerability());
+
+        }
     }
 
     private void UpdateQualityUI()
@@ -85,5 +94,11 @@ public class Soup : MonoBehaviour
             // Меняем цвет в зависимости от качества
             _qualitySlider.fillRect.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green, _currentQuality / _maxQuality);
         }
+    }
+    IEnumerator DoInvulnerability()
+    {
+        yield return new WaitForSeconds(_timeAfterWave);
+        _currentQuality = 40;
+        UpdateQualityUI();
     }
 }

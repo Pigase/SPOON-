@@ -11,7 +11,7 @@ public class Ingredient : MonoBehaviour
     public enum IngredientType { Good, Bad, Deadly }
 
     [Header("Parametars")]
-    [SerializeField] private float _speed = 1f;
+    [SerializeField] private float _speed = 3f;
     [SerializeField] private int _goodIngredientChance = 45;
     [SerializeField] private int _badIngredientChance = 45;
     [SerializeField] private float _speedMinRotate = 1f;
@@ -36,6 +36,13 @@ public class Ingredient : MonoBehaviour
     {
         SetRandomRotate();
         SetRandomTypeAndSprite();
+
+        GameManipulator.SecondWave += UpStats;
+    }
+
+    private void OnDisable()
+    {
+        GameManipulator.SecondWave += UpStats;
     }
     private void SetRandomTypeAndSprite()
     {
@@ -62,6 +69,12 @@ public class Ingredient : MonoBehaviour
         }
     }
 
+    private void UpStats()
+    {
+        _goodIngredientChance = 20;
+        _badIngredientChance = 40;
+        _speed = 5f;
+    }
     private void SetRandomRotate()
     {
         _speedRotate = UnityEngine.Random.Range(_speedMinRotate, _speedMaxRotate);
