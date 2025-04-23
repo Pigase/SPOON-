@@ -17,6 +17,10 @@ public class GameManipulator : MonoBehaviour
     {
         Soup.OnSoupRuined += GameOverPanel;
     }
+    private void OnDisable()
+    {
+        Soup.OnSoupRuined -= GameOverPanel;
+    }
 
     private void GameOverPanel()
     {

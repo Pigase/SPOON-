@@ -8,6 +8,7 @@ TagManager:
   - GoodIngredient
   - BadIngredient
   - DeadlyIngredient
+  - GameOverUI
   layers:
   - Default
   - TransparentFX
