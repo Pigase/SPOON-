@@ -27,6 +27,7 @@ public class Soup : MonoBehaviour
     public static Action IOnIngredientAdded;
 
     private float _currentQuality;
+    private bool _noDamage = false;
 
     private void Start()
     {
@@ -34,13 +35,37 @@ public class Soup : MonoBehaviour
         UpdateQualityUI();
     }
 
+    private void OnEnable()
+    {
+        GameManipulator.BossWave += NoDamage;
+    }
+    private void OnDisable()
+    {
+        GameManipulator.BossWave += NoDamage;
+    }
+
+    private void NoDamage()
+    {
+        _noDamage = true;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
+        Boss boss = other.GetComponent<Boss>();
         Ingredient ingredient = other.GetComponent<Ingredient>();
-        if (ingredient == null) 
-            return;
+        if (ingredient == null)
+        {
+            if (boss == null)
+            {
+                return;
+            }
+            else
+            {
+                AddQuality(_deadlyValue);
+                return;
+            }
+        }
 
-        ProcessIngredient(ingredient);
+            ProcessIngredient(ingredient);
         other.gameObject.SetActive(false); // Отключаем ингредиент
     }
 
@@ -98,7 +123,10 @@ public class Soup : MonoBehaviour
     IEnumerator DoInvulnerability()
     {
         yield return new WaitForSeconds(_timeAfterWave);
-        _currentQuality = 40;
-        UpdateQualityUI();
+        if (_noDamage == false)
+        {
+            _currentQuality = 40;
+            UpdateQualityUI();
+        }
     }
 }
