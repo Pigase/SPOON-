@@ -30,11 +30,13 @@ public class SpawnerObjects : MonoBehaviour
     private void OnEnable()
     {
         GameManipulator.NewWave += StopSpawn;
+        GameManipulator.BossWave += EndSpawn;
     }
 
     private void OnDisable()
     {
         GameManipulator.NewWave -= StopSpawn;
+        GameManipulator.BossWave -= EndSpawn;
     }
 
     private void StartSpawning()
@@ -68,6 +70,10 @@ public class SpawnerObjects : MonoBehaviour
     private void StopSpawn()
     {
         StartCoroutine(PauseSpawning(_pauseTime));
+    }
+    private void EndSpawn()
+    {
+        gameObject.SetActive(false);
     }
 
     private IEnumerator PauseSpawning(float pauseTime)

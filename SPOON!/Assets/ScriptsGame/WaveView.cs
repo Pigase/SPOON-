@@ -25,7 +25,14 @@ public class WaveView : MonoBehaviour
     }
     private void Update()
     {
-        _textNumberWave.text = _numberWave+"/3";
+        if(_numberWave==4)
+        {
+            _textNumberWave.text = "BOSS";
+        }
+        else
+        {
+            _textNumberWave.text = _numberWave + "/3";
+        }
     }
     private IEnumerator WaitPause(float pauseTime,int num)
     {
