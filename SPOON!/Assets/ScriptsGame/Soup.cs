@@ -37,12 +37,27 @@ public class Soup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Boss boss = other.GetComponent<Boss>();
         Ingredient ingredient = other.GetComponent<Ingredient>();
-        if (ingredient == null) 
-            return;
+        if (ingredient == null)
+        {
+            if(boss == null)
+            {
+                return;
+            }
+            else
+            {
+                AddQuality(_deadlyValue);
 
-        ProcessIngredient(ingredient);
-        other.gameObject.SetActive(false); // Отключаем ингредиент
+            }
+        }
+        else
+        {
+
+            ProcessIngredient(ingredient);
+            other.gameObject.SetActive(false); // Отключаем ингредиент
+        }
+
     }
     private void OnEnable()
     {

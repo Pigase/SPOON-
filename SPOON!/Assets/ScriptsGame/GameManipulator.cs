@@ -57,21 +57,24 @@ public class GameManipulator : MonoBehaviour
         {
             NewWave?.Invoke();
             _numberWave++;
+            audio[4].Play();
             _boy[0]?.GetComponent<Animator>()?.SetTrigger("OneWave");
             NumberWave.Invoke(_numberWave);
         }
         else if (_numberWave == 2)
         {
-            _boy[1]?.GetComponent<Animator>()?.SetTrigger("TwoWave");
             NewWave?.Invoke();
             _numberWave++;
+            audio[4].Play();
+            _boy[1]?.GetComponent<Animator>()?.SetTrigger("TwoWave");
             NumberWave.Invoke(_numberWave);
         }
         else if (_numberWave == 3)
         {
-            _boy[2]?.GetComponent<Animator>()?.SetTrigger("ThreeWave");
             BossWave?.Invoke();
             _numberWave++;
+            audio[4].Play();
+            _boy[2]?.GetComponent<Animator>()?.SetTrigger("ThreeWave");
             NumberWave.Invoke(_numberWave);
             StartCoroutine(PauseSpawningBoss(_bossWait));
         }
