@@ -11,7 +11,7 @@ public class GameManipulator : MonoBehaviour
     [SerializeField] private GameObject _canvasGameOver;
     [SerializeField] private GameObject _canvasWin;
     [SerializeField] private Boss _boss;
-    [SerializeField] private GameObject _boy;
+    [SerializeField] private GameObject[] _boy;
 
     private AudioSource[] audio;
 
@@ -57,17 +57,19 @@ public class GameManipulator : MonoBehaviour
         {
             NewWave?.Invoke();
             _numberWave++;
-            _boy?.GetComponent<Animator>()?.SetTrigger("OneWave");
+            _boy[0]?.GetComponent<Animator>()?.SetTrigger("OneWave");
             NumberWave.Invoke(_numberWave);
         }
         else if (_numberWave == 2)
         {
+            _boy[1]?.GetComponent<Animator>()?.SetTrigger("TwoWave");
             NewWave?.Invoke();
             _numberWave++;
             NumberWave.Invoke(_numberWave);
         }
         else if (_numberWave == 3)
         {
+            _boy[2]?.GetComponent<Animator>()?.SetTrigger("ThreeWave");
             BossWave?.Invoke();
             _numberWave++;
             NumberWave.Invoke(_numberWave);
