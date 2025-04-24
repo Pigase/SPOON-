@@ -116,13 +116,13 @@ MonoBehaviour:
   - {fileID: 1460874266, guid: 3196291f3866f9a42898acfd7a251329, type: 3}
   - {fileID: -953604122, guid: 3196291f3866f9a42898acfd7a251329, type: 3}
   _spritesBadIngredient:
-  - {fileID: 1093986343, guid: 06b965f071d03c84ca5a6bef7c9f09b9, type: 3}
-  - {fileID: -551590475, guid: 06b965f071d03c84ca5a6bef7c9f09b9, type: 3}
-  - {fileID: -665341861, guid: 06b965f071d03c84ca5a6bef7c9f09b9, type: 3}
+  - {fileID: -1947675306, guid: a38552d480890404096e1d1217efa85b, type: 3}
   - {fileID: 1745823374, guid: 06b965f071d03c84ca5a6bef7c9f09b9, type: 3}
   - {fileID: -1698397422, guid: 06b965f071d03c84ca5a6bef7c9f09b9, type: 3}
   - {fileID: -706982691, guid: 06b965f071d03c84ca5a6bef7c9f09b9, type: 3}
-  - {fileID: -826732591, guid: 06b965f071d03c84ca5a6bef7c9f09b9, type: 3}
+  - {fileID: -356285949, guid: a38552d480890404096e1d1217efa85b, type: 3}
+  - {fileID: 605845399, guid: a38552d480890404096e1d1217efa85b, type: 3}
+  - {fileID: 699171664, guid: a38552d480890404096e1d1217efa85b, type: 3}
   _spritesDeadlyIngredient:
   - {fileID: 21300000, guid: 5e74665b0e468b7469d62ffb9259a390, type: 3}
   - {fileID: 21300000, guid: dbcb1d232b907b34b9a5a3dd572adac1, type: 3}
