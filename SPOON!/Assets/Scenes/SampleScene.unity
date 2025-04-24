@@ -1566,6 +1566,7 @@ MonoBehaviour:
   _canvasGameOver: {fileID: 1646777964}
   _canvasWin: {fileID: 80362375}
   _boss: {fileID: 346543159}
+  _boy: {fileID: 1080676927}
 --- !u!114 &525904015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1980,7 +1981,7 @@ RectTransform:
   m_GameObject: {fileID: 618552246}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.96464, y: 0.96464, z: 0.96464}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 821441796}
@@ -2549,7 +2550,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: fuck me
+  m_text: The next wave will burn hotter than chili in your eyeballs! Brace yourself,
+    broth defender!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2558,7 +2560,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 0
   m_fontColor: {r: 0, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2576,7 +2578,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 68.45
+  m_fontSize: 23
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3250,6 +3252,7 @@ GameObject:
   - component: {fileID: 1080676931}
   - component: {fileID: 1080676930}
   - component: {fileID: 1080676929}
+  - component: {fileID: 1080676932}
   m_Layer: 5
   m_Name: Boy
   m_TagString: Untagged
@@ -3336,6 +3339,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080676927}
   m_CullTransparentMesh: 1
+--- !u!114 &1080676932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080676927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd004a8aaa0643548a8a23cce98855b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textBoy: {fileID: 821441797}
+  _textConsist: The soup calls me elsewhere...
 --- !u!1 &1095692169
 GameObject:
   m_ObjectHideFlags: 0
@@ -5922,6 +5939,22 @@ PrefabInstance:
     - target: {fileID: 6236116249169309945, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956745789515495295, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 52453f473c19cda4fb1c0ccf7dbf9686, type: 3}
+    - target: {fileID: 6956745789515495295, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956745789515495295, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956745789515495295, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8349828482302898846, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
       propertyPath: m_LocalPosition.x
