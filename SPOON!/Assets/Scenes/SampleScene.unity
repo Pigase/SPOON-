@@ -1543,7 +1543,6 @@ RectTransform:
   - {fileID: 667292304}
   - {fileID: 1152453630}
   - {fileID: 896806971}
-  - {fileID: 1673161338}
   m_Father: {fileID: 1610848293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1820,52 +1819,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279510756}
   m_CullTransparentMesh: 1
---- !u!1 &346543156 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6236116249169309945, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
-  m_PrefabInstance: {fileID: 2007259481336131255}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &346543157
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346543156}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &346543159 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8840418752596354063, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
   m_PrefabInstance: {fileID: 2007259481336131255}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346543156}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ce80838e4376e0429ef3e91865d5ffa, type: 3}
@@ -2678,7 +2637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolCount: 12
-  _pauseTime: 5
+  _pauseTime: 15
   _minTimeSpawn: 1
   _maxTimeSpawn: 1.5
   _autoExpande: 1
@@ -3132,9 +3091,9 @@ GameObject:
   - component: {fileID: 525904015}
   - component: {fileID: 525904016}
   - component: {fileID: 525904020}
+  - component: {fileID: 525904018}
   - component: {fileID: 525904021}
   - component: {fileID: 525904017}
-  - component: {fileID: 525904018}
   - component: {fileID: 525904019}
   - component: {fileID: 525904022}
   m_Layer: 0
@@ -3185,13 +3144,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberWave: 1
-  _bossWait: 5
+  _bossWait: 15
   _canvasGameOver: {fileID: 1646777964}
   _canvasWin: {fileID: 80362375}
   _boss: {fileID: 346543159}
   _boy:
   - {fileID: 1080676927}
   - {fileID: 1016250939}
+  - {fileID: 1673161337}
 --- !u!114 &525904015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3848,7 +3808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ab01f8786eeb04bb3733c28b3b0e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pauseTime: 5
+  _pauseTime: 15
   _textNumberWave: {fileID: 559060343}
 --- !u!114 &559060343
 MonoBehaviour:
@@ -9097,7 +9057,7 @@ MonoBehaviour:
   _goodValue: 5
   _badValue: -10
   _deadlyValue: -100
-  _timeAfterWave: 5
+  _timeAfterWave: 15
   _qualitySlider: {fileID: 997920227}
   OnIngredientAdded:
     m_PersistentCalls:
@@ -11034,6 +10994,7 @@ RectTransform:
   - {fileID: 252155963}
   - {fileID: 1080676928}
   - {fileID: 1016250940}
+  - {fileID: 1673161338}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11303,13 +11264,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673161337}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.099213, y: 3.5783954, z: 3.5783954}
+  m_LocalScale: {x: 5.0992126, y: 3.5783951, z: 3.5783951}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1728274934}
-  m_Father: {fileID: 252155963}
+  m_Father: {fileID: 1610848293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14237,26 +14198,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 6236116249169309945, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6956745789515495295, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 52453f473c19cda4fb1c0ccf7dbf9686, type: 3}
-    - target: {fileID: 6956745789515495295, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6956745789515495295, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6956745789515495295, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8349828482302898846, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.757
@@ -14300,10 +14241,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6236116249169309945, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 346543157}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49ce2a6856cc60b4f921080a5c327100, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

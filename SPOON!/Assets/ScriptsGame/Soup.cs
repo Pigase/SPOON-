@@ -27,6 +27,7 @@ public class Soup : MonoBehaviour
     public static Action IOnIngredientAdded;
 
     private float _currentQuality;
+    private bool _noDamage = false;
 
     private void Start()
     {
@@ -43,7 +44,19 @@ public class Soup : MonoBehaviour
         ProcessIngredient(ingredient);
         other.gameObject.SetActive(false); // Отключаем ингредиент
     }
+    private void OnEnable()
+    {
+        GameManipulator.BossWave += NoDamage;
+    }
+    private void OnDisable()
+    {
+        GameManipulator.BossWave += NoDamage;
+    }
 
+    private void NoDamage()
+    {
+        _noDamage = true;
+    }
     private void ProcessIngredient(Ingredient ingredient)
     {
         // Определяем эффект в зависимости от типа
@@ -98,7 +111,10 @@ public class Soup : MonoBehaviour
     IEnumerator DoInvulnerability()
     {
         yield return new WaitForSeconds(_timeAfterWave);
-        _currentQuality = 40;
-        UpdateQualityUI();
+        if(_noDamage == false)
+        {
+            _currentQuality = 40;
+            UpdateQualityUI();
+        }
     }
 }
